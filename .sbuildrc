@@ -1,0 +1,13 @@
+$build_arch_all = 1;
+
+$run_lintian = 1;
+$lintian_opts = ['--fail-on-warnings', '--color', 'auto', '-I', '-E', '--pedantic', '-i'];
+
+$run_autopkgtest = 1;
+$autopkgtest_root_args = '';
+$autopkgtest_opts = [ '--', 'schroot', '%r-%a-sbuild' ];
+
+$ENV{'DEB_BUILD_OPTIONS'} = 'parallel=4';
+
+# don't remove this, Perl needs it (see example.sbuildrc):
+1;
